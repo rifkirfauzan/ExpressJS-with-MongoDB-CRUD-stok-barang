@@ -1,0 +1,76 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="edit-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Data Barang</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/stok?_method=PUT" method="POST">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name">nama_barang</label>
+            <input
+              type="text"
+              class="form-control nama_barang"
+              name="nama_barang"
+              nama="Enter nama_barang"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">jenis_barang</label>
+            <input
+              type="text"
+              class="form-control jenis_barang"
+              name="jenis_barang"
+              nama="Enter jenis_barang"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">harga_satuan</label>
+            <input
+              type="number"
+              class="form-control harga_satuan"
+              name="harga_satuan"
+              nama="Enter harga_satuan"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">jumlah_barang</label>
+            <input
+              type="number"
+              class="form-control jumlah_barang"
+              name="jumlah_barang"
+              nama="Enter jumlah_barang"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="hidden" class="id" name="id" />
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Edit data</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

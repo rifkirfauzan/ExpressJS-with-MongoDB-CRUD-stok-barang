@@ -1,0 +1,62 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-outline-primary btn-sm"
+        data-toggle="modal"
+        data-target="#add-modal"
+      >
+        Tambah data
+      </button>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Barang</th>
+              <th>Jenis Barang</th>
+              <th>Harga Satuan</th>
+              <th>Jumlah Barang</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i = 0; i < stok.length; i++){ %>
+            <tr>
+              <td><%= i +1 %></td>
+              <td><%= stok[i].nama_barang %></td>
+              <td><%= stok[i].jenis_barang %></td>
+              <td><%= stok[i].harga_satuan %></td>
+              <td><%= stok[i].jumlah_barang %></td>
+              <td class="text-center">
+                <form action="/stok/<%= stok[i].id %>?_method=DELETE" method="POST">
+                <a
+                  href="javascript:void()"
+                  class="btn btn-outline-warning btn-sm button-update"
+                  data-id="<%= stok[i].id %>"
+                  data-nama_barang="<%= stok[i].nama_barang %>"
+                  data-jenis_barang="<%=stok[i].jenis_barang %>"
+                  data-harga_satuan="<%= stok[i].harga_satuan %>"
+                  data-jumlah_barang="<%= stok[i].jumlah_barang %>"
+                  >Edit</a>
+                <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah kamu yakin ingin hapus data?');">
+                  Delete
+                </button>
+                </form>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
